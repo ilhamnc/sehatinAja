@@ -8,7 +8,7 @@ const routes = [
   },
   {
     method: 'GET',
-    path: '/profile/{username}',
+    path: '/profile',
     handler: handler.getUserHandler,
   },
   {

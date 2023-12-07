@@ -2,24 +2,29 @@ const { nanoid } = require('nanoid');
 const hash = require('bcrypt');
 const Joi = require('joi');
 const jwt = require('jsonwebtoken');
-const db = require('../config/configdb');
 const { promisify } = require('util');
+const db = require('../config/configdb');
 
 const query = promisify(db.query).bind(db);
 
 const addUsersHandler = async (request, h) => {
   try {
-    const { username, email, password, confirmPassword } = request.payload;
+    const {
+      username, email, password, confirmPassword,
+    } = request.payload;
 
     // Validasi input
     const schema = Joi.object({
-      username: Joi.string().alphanum().min(6).max(20).required(),
+      username: Joi.string().alphanum().min(6).max(20)
+        .required(),
       email: Joi.string().email().required(),
       password: Joi.string().min(8).required(),
       confirmPassword: Joi.string().valid(Joi.ref('password')).required(),
     });
 
-    const { error } = schema.validate({ username, email, password, confirmPassword });
+    const { error } = schema.validate({
+      username, email, password, confirmPassword,
+    });
 
     if (error) {
       return h.response({
@@ -36,7 +41,7 @@ const addUsersHandler = async (request, h) => {
     if (user) {
       return h.response({
         error: true,
-        message: 'Username atau email sudah terdaftar',
+        message: 'Username or email has been used',
       }).code(409);
     }
 
@@ -46,54 +51,61 @@ const addUsersHandler = async (request, h) => {
 
     // Tambahkan user ke database
     const userId = nanoid(10);
-    const insertQuery = `INSERT INTO users (id, username, email, password) VALUES ('${userId}', '${username}', '${email}', '${hashedPassword}')`;
-    await query(insertQuery);
+    const insertUser = `INSERT INTO users (id, username, email, password) VALUES ('${userId}', '${username}', '${email}', '${hashedPassword}')`;
+    await query(insertUser);
 
     return h.response({
       error: false,
-      message: 'success',
+      message: 'Success',
       userId,
     }).code(201);
   } catch (error) {
-    console.error(error);
     return h.response({
       error: true,
       message: 'Terjadi kesalahan pada server',
     }).code(500);
   }
 };
-
 
 const getUserHandler = async (request, h) => {
   try {
-    const { username } = request.params;
+    // Mendapatkan refreshToken dari cookies
+    const { refreshToken } = request.state;
 
-    // Ambil data user dari database
-    const getUserQuery = `SELECT * FROM users WHERE username='${username}'`;
-    const rows = await query(getUserQuery);
-    const user = rows[0];
+    if (refreshToken) {
+      // Ambil informasi user dari refreshToken
+      const decodedToken = jwt.verify(refreshToken, 'sehatin-aja');
+      const { userId } = decodedToken;
 
-    if (!user) {
+      // Ambil data user dari database
+      const getUser = `SELECT * FROM users WHERE id='${userId}'`;
+      const rows = await query(getUser);
+      const user = rows[0];
+
+      if (!user) {
+        return h.response({
+          error: true,
+          message: 'User not found',
+        }).code(404);
+      }
+
       return h.response({
-        error: true,
-        message: 'User tidak ditemukan',
-      }).code(404);
+        error: false,
+        message: 'Success',
+        user,
+      });
     }
-
     return h.response({
-      error: false,
-      message: 'success',
-      user,
-    });
+      error: true,
+      message: 'Token not found',
+    }).code(401);
   } catch (error) {
-    console.error(error);
     return h.response({
       error: true,
       message: 'Terjadi kesalahan pada server',
     }).code(500);
   }
 };
-
 
 const loginHandler = async (request, h) => {
   try {
@@ -101,7 +113,8 @@ const loginHandler = async (request, h) => {
 
     // Validasi input
     const schema = Joi.object({
-      username: Joi.string().alphanum().min(6).max(20).required(),
+      username: Joi.string().alphanum().min(6).max(20)
+        .required(),
       password: Joi.string().min(8).required(),
     });
 
@@ -115,14 +128,14 @@ const loginHandler = async (request, h) => {
     }
 
     // Cek apakah user terdaftar
-    const checkQuery = `SELECT * FROM users WHERE username='${username}'`;
-    const rows = await query(checkQuery);
+    const checkUsername = `SELECT * FROM users WHERE username='${username}'`;
+    const rows = await query(checkUsername);
     const user = rows[0];
 
     if (!user) {
       return h.response({
         error: true,
-        message: 'Username atau password salah',
+        message: 'Incorrect username or password',
       }).code(401);
     }
 
@@ -132,16 +145,19 @@ const loginHandler = async (request, h) => {
     if (!match) {
       return h.response({
         error: true,
-        message: 'Username atau password salah',
+        message: 'Incorrect username or password',
       }).code(401);
     }
 
     // Generate token
     const token = jwt.sign({ userId: user.id }, 'sehatin-aja', { expiresIn: '15m' });
 
+    // Simpan refreshToken dalam cookies
+    h.state('refreshToken', token);
+
     return h.response({
       error: false,
-      message: 'success',
+      message: 'Login successful',
       loginResult: {
         userId: user.id,
         name: user.username,
@@ -149,7 +165,6 @@ const loginHandler = async (request, h) => {
       },
     }).code(200);
   } catch (error) {
-    console.error(error);
     return h.response({
       error: true,
       message: 'Terjadi kesalahan pada server',
@@ -159,34 +174,32 @@ const loginHandler = async (request, h) => {
 
 const refreshTokenHandler = async (request, h) => {
   try {
-    // Mendapatkan token dari request header
-    const authHeader = request.headers.authorization;
-    
-    if (!authHeader || !authHeader.startsWith('Bearer')) {
+    // Mendapatkan refreshToken dari cookies
+    const { refreshToken } = request.state;
+
+    if (refreshToken) {
+      // Ambil informasi user dari refreshToken
+      const decodedToken = jwt.verify(refreshToken, 'sehatin-aja');
+      const { userId } = decodedToken;
+
+      // Generate token baru
+      const newToken = jwt.sign({ userId }, 'sehatin-aja', { expiresIn: '30m' });
+
+      // Perbarui refreshToken dalam cookies
+      h.state('refreshToken', newToken);
+
       return h.response({
-        error: true,
-        message: 'Unauthorized',
-      }).code(401);
+        error: false,
+        message: 'Refresh token successful',
+        userId,
+        newToken,
+      }).code(200);
     }
-
-    const token = authHeader.substring(7);
-
-    // Verifikasi token
-    const secretKey = 'sehatin-aja';
-    const decodedToken = jwt.verify(token, secretKey);
-
-    // Buat JWT token baru
-    const tokenPayload = { userId: decodedToken.userId };
-    const options = { expiresIn: '15m' };
-    const newToken = jwt.sign(tokenPayload, secretKey, options);
-
     return h.response({
-      error: false,
-      message: 'success',
-      newToken,
-    }).code(200);
+      error: true,
+      message: 'Refresh token is invalid',
+    }).code(401);
   } catch (error) {
-    console.error(error);
     return h.response({
       error: true,
       message: 'Terjadi kesalahan pada server',
@@ -196,12 +209,23 @@ const refreshTokenHandler = async (request, h) => {
 
 const logoutHandler = async (request, h) => {
   try {
+    // Mendapatkan refreshToken dari cookies
+    const { refreshToken } = request.state;
+
+    if (refreshToken) {
+    // Hapus refreshToken dari cookies
+      h.unstate('refreshToken');
+
+      return h.response({
+        error: false,
+        message: 'Logout successful',
+      }).code(200);
+    }
     return h.response({
-      error: false,
-      message: 'success',
-    }).code(200);
+      error: true,
+      message: 'Logout is invalid',
+    }).code(401);
   } catch (error) {
-    console.error(error);
     return h.response({
       error: true,
       message: 'Terjadi kesalahan pada server',
