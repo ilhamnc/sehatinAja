@@ -6,5 +6,5 @@ This project was created to address health issues arising from diet and daily ac
 
 ## App View
 
-![App Screenshot](Image/Authentikasi (0).png)
+![App Screenshot](./Image/Authentikasi (0).png)
 
