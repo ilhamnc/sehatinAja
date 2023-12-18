@@ -8,26 +8,40 @@ const query = promisify(db.query).bind(db);
 const addHistoryHandler = async (request, h) => {
   try {
     const {
-      userId, age, height, weight, data,
+      age, height, weight, data,
     } = request.payload;
 
-    // Tambahkan user ke database
-    const id = nanoid(10);
-    const insertDate = new Date();
-    const formatDate = insertDate.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    }).replace(/\//g, '-');
+    // Mendapatkan refreshToken dari cookies
+    const { refreshToken } = request.state;
 
-    const insertHistory = `INSERT INTO histories (id, userId, age, height, weight, data, tanggal) VALUES ('${id}', '${userId}', '${age}', '${height}', '${weight}', '${data}', '${formatDate}')`;
-    await query(insertHistory);
+    if (refreshToken) {
+      // Ambil informasi user dari refreshToken
+      const decodedToken = jwt.verify(refreshToken, 'sehatin-aja');
+      const { userId } = decodedToken;
+      const user = userId;
 
+      // Tambahkan user ke database
+      const id = nanoid(10);
+      const insertDate = new Date();
+      const formatDate = insertDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }).replace(/\//g, '-');
+
+      const insertHistory = `INSERT INTO histories (id, userId, age, height, weight, data, tanggal) VALUES ('${id}', '${user}', '${age}', '${height}', '${weight}', '${data}', '${formatDate}')`;
+      await query(insertHistory);
+
+      return h.response({
+        error: false,
+        message: 'Success',
+        user,
+      }).code(201);
+    }
     return h.response({
-      error: false,
-      message: 'Success',
-      userId,
-    }).code(201);
+      error: true,
+      message: 'Token not found',
+    }).code(401);
   } catch (error) {
     return h.response({
       error: true,
