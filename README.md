@@ -16,9 +16,9 @@ This project was created to address health issues arising from diet and daily ac
         </thead>
         <tbody>
             <tr>
-                <td><p align="center"><a href="" target="_blank"><img src="https://drive.google.com/drive/u/0/folders/1FVc-2dUJwLleqymQhw-551SzoQ_Uge9J" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://drive.google.com/drive/u/0/folders/1FVc-2dUJwLleqymQhw-551SzoQ_Uge9J" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://drive.google.com/drive/u/0/folders/1FVc-2dUJwLleqymQhw-551SzoQ_Uge9J" width="200"></a></p></td>
+                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/Z5vzMsRp/Authentikasi-0.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/Z5vzMsRp/Authentikasi-0.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/Z5vzMsRp/Authentikasi-0.png" width="200"></a></p></td>
             </tr>
         </tbody>
     </table>
