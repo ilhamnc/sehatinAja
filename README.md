@@ -16,9 +16,9 @@ This project was created to address health issues arising from diet and daily ac
         </thead>
         <tbody>
             <tr>
-                <td><p align="center"><a href="" target="_blank"><img src="https://cdn.discordapp.com/attachments/889158043470811209/985098134130683924/Splash_Screen.jpeg" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://cdn.discordapp.com/attachments/889158043470811209/985094243011932170/Screenshot_2022-06-10-22-19-24-162_com.ridianputra.obatin.png" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://cdn.discordapp.com/attachments/889158043470811209/985095257182076938/Screenshot_2022-06-11-15-15-32-862_com.ridianputra.obatin.png" width="200"></a></p></td>
+                <td><p align="center"><a href="" target="_blank"><img src="[https://cdn.discordapp.com/attachments/889158043470811209/985098134130683924/Splash_Screen.jpeg](https://drive.google.com/drive/u/0/folders/1FVc-2dUJwLleqymQhw-551SzoQ_Uge9J)" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="[https://cdn.discordapp.com/attachments/889158043470811209/985094243011932170/Screenshot_2022-06-10-22-19-24-162_com.ridianputra.obatin.png](https://drive.google.com/drive/u/0/folders/1FVc-2dUJwLleqymQhw-551SzoQ_Uge9J)" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="[https://cdn.discordapp.com/attachments/889158043470811209/985095257182076938/Screenshot_2022-06-11-15-15-32-862_com.ridianputra.obatin.png](https://drive.google.com/drive/u/0/folders/1FVc-2dUJwLleqymQhw-551SzoQ_Uge9J)" width="200"></a></p></td>
             </tr>
         </tbody>
     </table>
