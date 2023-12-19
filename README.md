@@ -5,8 +5,13 @@ This project was created to address health issues arising from diet and daily ac
 
 
 ## App View
+<style>
+  table {
+    background-color: #f2f2f2;
+  }
+</style>
 
-<table  align="center" style="background-color: #f2f2f2">
+<table  align="center">
         <thead>
             <tr>
                 <th>Opening</th>
@@ -24,7 +29,7 @@ This project was created to address health issues arising from diet and daily ac
     </table>
 
 
-<table  align="center" style="background-color: #f2f2f2">
+<table  align="center">
         <thead>
             <tr>
                 <th>Home</th>
@@ -43,7 +48,7 @@ This project was created to address health issues arising from diet and daily ac
         </tbody>
     </table>
 
-<table  align="center" style="background-color: #f2f2f2">
+<table  align="center">
         <thead>
             <tr>
                 <th>All History</th>
