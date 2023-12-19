@@ -17,8 +17,8 @@ This project was created to address health issues arising from diet and daily ac
         <tbody>
             <tr>
                 <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/8cWSmLRL/Authentikasi-0.png" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/DrP8iBdCFWVMYnyy6" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/FHdcySeTP81mP2uz9" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/VsbmwPx5/Authentikasi-1.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/PrWHLzrj/Authentikasi-2.png" width="200"></a></p></td>
             </tr>
         </tbody>
     </table>
@@ -35,9 +35,9 @@ This project was created to address health issues arising from diet and daily ac
         <tbody>
             <tr>
                 <td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/WLj9e9r9zTAQBc5P7" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/vC6hckx3h6Kw4iTU8" width="200"></a></p>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/tgTGmKdq/Generate-3.png" width="200"></a></p>
 </td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/aF5hNrDWwEvNA3eU7" width="200"></a></p>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/tJ00J7KJ/History-0.png" width="200"></a></p>
 </td>
             </tr>
         </tbody>
@@ -53,10 +53,10 @@ This project was created to address health issues arising from diet and daily ac
         </thead>
         <tbody>
             <tr>
-                <td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/1DcfYKwh9Caeziaj7" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/FthR6KJuQa4Q21wC8" width="200"></a></p>
+                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/dVJYGkLT/History-1.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/j5n0RykB/History-2.png" width="200"></a></p>
 </td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/Qz7ZfuzeUaYkdVNU9" width="200"></a></p>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/KcLSVrTM/Profile.png" width="200"></a></p>
 </td>
             </tr>
         </tbody>
