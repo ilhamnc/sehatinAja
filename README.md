@@ -15,9 +15,9 @@ This project was created to address health issues arising from diet and daily ac
         </thead>
         <tbody>
             <tr>
-                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/8cWSmLRL/Authentikasi-0.png" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/VsbmwPx5/Authentikasi-1.png" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/PrWHLzrj/Authentikasi-2.png" width="200"></a></p></td>
+                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/pdThMXv7/Authentikasi-1.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/hv9h1X8J/Authentikasi-2.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/59vHVrcx/Authentikasi-3.png" width="200"></a></p></td>
             </tr>
         </tbody>
     </table>
@@ -33,10 +33,10 @@ This project was created to address health issues arising from diet and daily ac
         </thead>
         <tbody>
             <tr>
-                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/59C09ChB/Generate-rekomendasi-makanan.png" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/tgTGmKdq/Generate-3.png" width="200"></a></p>
+                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/KvDRKgvw/Generate-2.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/RFt0vWDP/Generate-5.png" width="200"></a></p>
 </td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/tJ00J7KJ/History-0.png" width="200"></a></p>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/W4C3RGXF/Histori-1.png" width="200"></a></p>
 </td>
             </tr>
         </tbody>
@@ -52,10 +52,10 @@ This project was created to address health issues arising from diet and daily ac
         </thead>
         <tbody>
             <tr>
-                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/dVJYGkLT/History-1.png" width="200"></a></p></td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/j5n0RykB/History-2.png" width="200"></a></p>
+                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/WzP1z2Rs/Histori-2.png" width="200"></a></p></td>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/P56JysDM/Histori-3.png" width="200"></a></p>
 </td>
-				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/KcLSVrTM/Profile.png" width="200"></a></p>
+				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/3xrW2JkR/Profile.png" width="200"></a></p>
 </td>
             </tr>
         </tbody>
