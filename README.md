@@ -34,7 +34,7 @@ This project was created to address health issues arising from diet and daily ac
         </thead>
         <tbody>
             <tr>
-                <td><p align="center"><a href="" target="_blank"><img src="https://photos.app.goo.gl/WLj9e9r9zTAQBc5P7" width="200"></a></p></td>
+                <td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/59C09ChB/Generate-rekomendasi-makanan.png" width="200"></a></p></td>
 				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/tgTGmKdq/Generate-3.png" width="200"></a></p>
 </td>
 				<td><p align="center"><a href="" target="_blank"><img src="https://i.postimg.cc/tJ00J7KJ/History-0.png" width="200"></a></p>
