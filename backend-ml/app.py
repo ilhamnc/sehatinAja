@@ -5,7 +5,7 @@ import pickle
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 model = pickle.load(open('model.pkl', 'rb'))
 
@@ -31,4 +31,6 @@ def predict():
         return jsonify({'error': True, 'message': 'Terjadi kesalahan'}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    from gevent.pywsgi import WSGIServer
+    http_server = WSGIServer(('0.0.0.0', 5000), app)
+    http_server.serve_forever()
