@@ -1,21 +1,20 @@
-# Use the official image as a parent image
+# Gunakan image Python resmi yang ringan
 FROM python:3.8-slim
 
-# Set the working directory in the container
+# Atur direktori kerja di dalam kontainer
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Salin isi direktori saat ini ke dalam kontainer di /app
 COPY . /app
 
-# Set up a virtual environment
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+# Instal paket yang diperlukan yang tercantum di requirements.txt
+RUN apt-get update && apt-get install -y python3-venv
+RUN python3 -m venv venv
+RUN . venv/bin/activate
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Make port 5000 available to the world outside this container
+# Membuat port 5000 tersedia untuk dunia di luar kontainer
 EXPOSE 5000
 
-# Run app.py when the container launches
+# Menjalankan app.py saat kontainer diluncurkan
 CMD ["python", "app.py"]
