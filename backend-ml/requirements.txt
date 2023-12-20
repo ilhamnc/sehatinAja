@@ -1,3 +1,5 @@
-flask
+Flask
 numpy
-flask_cors
+flask-cors
+scikit-learn
+gevent
