@@ -1,5 +1,0 @@
-Flask
-numpy
-flask-cors
-scikit-learn
-gevent
