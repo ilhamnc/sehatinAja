@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SehatinAja</string>
+    <string name="welcome_text">This application will help you to manage your food patterns</string>
+    <string name="go">Go</string>
+    <string name="welcome">Welcome</string>
+    <string name="login_text">Please log in our app</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="login_validate">Don’t have an account?</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signup">Sign Up</string>
+    <string name="signup_validate">Already have an account?</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="history_of_illness">History of illness</string>
+    <string name="find">Find</string>
+    <string name="cm">cm</string>
+    <string name="kg">kg</string>
+    <string name="hello">halo</string>
+    <string name="home_text">Come on, find your recommendation food pattern!</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "107158428659",
+    "project_id": "sehatinaja-3c512",
+    "storage_bucket": "sehatinaja-3c512.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107158428659:android:2747a67c97c0093c3b1086",
+        "android_client_info": {
+          "package_name": "com.guntur.sehatinaja"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY7W1_jb1PpInyWw_l6XrNV0_NmuEdOOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
